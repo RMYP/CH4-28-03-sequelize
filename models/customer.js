@@ -26,7 +26,8 @@ module.exports = (sequelize, DataTypes) => {
     photo: {
       type: DataTypes.TEXT,
       defaultValue: "user-default.jpg"
-    }
+    },
+    
   }, {
     sequelize,
     modelName: 'Customer',

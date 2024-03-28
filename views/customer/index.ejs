@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello world</h1>
+    <% if(message != ""){ alert("success") } %>
+    <table>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>City</th>
+        <th>Email</th>
+        <th>createdAt</th>
+        <% customers.map((customer) => {%>
+            <tr>
+                <td><%= customer.id %></td>
+                <td><%= customer.name %></td>
+                <td><%= customer.age %></td>
+                <td><%= customer.city %></td>
+                <td><%= customer.email %></td>
+                <td><%= customer.createdAt %></td>
+                <td>
+                    <a href="/customer/edit/<%= customer.id %>"></a>
+                </td>
+                <td>
+                    <form action="/customers/delete/<%= customer.id %>" method="POST">
+                        <button>Delete</button>
+                    </form>
+                </td>
+            </tr>
+        <% })%>
+    </table>
+    <a href="/customer/create">
+        <button>Tambah Customer Baru</button>
+    </a>
+</body>
+</html>

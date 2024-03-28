@@ -1,8 +1,7 @@
-const {Customer} = require("../models")
+const {Customer} = require("../models/customer")
 
 const createCustomer = async (req, res) => {
     const {name, age, email, city} = req.body;
-
     try {
         const newCustomer = await Customer.create({
             name,
